@@ -11,15 +11,7 @@ public class Dish {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getCalories() {
         return calories;
-    }
-
-    public void setCalories(int calories) {
-        this.calories = calories;
     }
 }
