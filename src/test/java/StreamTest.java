@@ -14,16 +14,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class StreamTest {
 
     List<Dish> menu = Arrays.asList(
-            new Dish("hamburger",500),
-            new Dish("chicken",1000),
+            new Dish("hamburger", 500),
+            new Dish("chicken", 1000),
             new Dish("sandwich", 200));
 
     @Test
-    public void 스트림_사용하지않고_for문과_익명클래스를_사용하는_경우(){
+    public void 스트림_사용하지않고_for문과_익명클래스를_사용하는_경우() {
         //for loop
         List<Dish> lowCaloriesDish = new ArrayList<>();
-        for (Dish dish : menu){
-            if (dish.getCalories() < 2000){
+        for (Dish dish : menu) {
+            if (dish.getCalories() < 2000) {
                 lowCaloriesDish.add(dish);
             }
         }
@@ -40,7 +40,7 @@ class StreamTest {
     }
 
     @Test
-    public void 스트림을_사용하는_경우(){
+    public void 스트림을_사용하는_경우() {
         List<Dish> lowCaloriesDish = new ArrayList<>();
         lowCaloriesDish = menu.stream()
                 .filter(dish -> dish.getCalories() < 2000)
