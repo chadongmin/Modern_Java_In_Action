@@ -1,22 +1,18 @@
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
 
 class StreamTest {
 
     List<Dish> menu = Arrays.asList(
-            new Dish("hamburger", 500),
-            new Dish("chicken", 1000),
-            new Dish("sandwich", 200));
+        new Dish("hamburger", 500),
+        new Dish("chicken", 1000),
+        new Dish("sandwich", 200));
 
     @Test
     public void 스트림_사용하지않고_for문과_익명클래스를_사용하는_경우() {
@@ -43,9 +39,9 @@ class StreamTest {
     public void 스트림을_사용하는_경우() {
         List<Dish> lowCaloriesDish = new ArrayList<>();
         lowCaloriesDish = menu.stream()
-                .filter(dish -> dish.getCalories() < 2000)
-                .sorted(Comparator.comparing(Dish::getCalories))
-                .collect(Collectors.toList());
+            .filter(dish -> dish.getCalories() < 2000)
+            .sorted(Comparator.comparing(Dish::getCalories))
+            .collect(Collectors.toList());
 
         assertEquals(lowCaloriesDish.get(0).getName(), "sandwich");
     }

@@ -1,9 +1,9 @@
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class FunctionalInterface {
+
     @Test
-    public void 함수형인터페이스에_람다식을_전달할수있는이유(){
+    public void 함수형인터페이스에_람다식을_전달할수있는이유() {
         Runnable r1 = () -> System.out.println("Hello world");
 
         /**
